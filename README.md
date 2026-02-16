@@ -25,3 +25,5 @@ Repozitář je složka projektu, která obsahuje:
 
 ## To není vše
 Ještě k tomu je výklad a prezentace.
+
+## Uprava na ukázku
