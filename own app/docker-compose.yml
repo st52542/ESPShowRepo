@@ -5,3 +5,8 @@ services:
     build: .
     ports:
       - "5003:5003"
+
+  app2:
+    build: .
+    ports:
+      - "5005:5003"
