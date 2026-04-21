@@ -111,7 +111,7 @@ def external_localhost():
             "type": "external communication via localhost",
             "route": "app -> localhost:5432 -> db",
             "db_result": result,
-            "note": "Tohle vyjde jen pokud by PostgreSQL bezela primo uvnitr app containeru, nebo by app bezela v host network."
+            "note": "Tohle vyjde jen pokud by PostgreSQL bezela primo uvnitr app containeru, nebo by app bezela v host network"
         })
     except Exception as e:
         return jsonify({
@@ -119,7 +119,7 @@ def external_localhost():
             "type": "external communication via localhost",
             "route": "app -> localhost:5432 -> db",
             "message": str(e),
-            "note": "Tohle je ocekavane. Uvnitr containeru localhost znamena tento app container, ne host machine."
+            "note": "Tohle je ocekavane. Uvnitr containeru localhost znamena tento app container, ne host machine"
         }), 500
 
 
