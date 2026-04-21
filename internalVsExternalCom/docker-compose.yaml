@@ -1,0 +1,39 @@
+services:
+  db:
+    image: postgres:16
+    container_name: demo-db
+    environment:
+      POSTGRES_DB: demo
+      POSTGRES_USER: demo
+      POSTGRES_PASSWORD: demo123
+    ports:
+      - "5432:5432"
+    command:
+      - postgres
+      - -c
+      - log_connections=on
+      - -c
+      - log_disconnections=on
+      - -c
+      - log_statement=all
+    networks:
+      - app-net
+
+  app:
+    build: ./app
+    container_name: demo-python-app
+    depends_on:
+      - db
+    ports:
+      - "8080:5000"
+    environment:
+      DB_NAME: demo
+      DB_USER: demo
+      DB_PASSWORD: demo123
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - app-net
+
+networks:
+  app-net:
